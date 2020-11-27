@@ -16,7 +16,7 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
                         //    <message>java.lang.NumberFormatException: For input string: "9223372036854776000"</message>
                         //    <type>unknown</type>
                         // </apiResponse>
-        "id": 1,                // "key:" or key:, both work
+        "id": 1,                // optional "" for the keys in the body
         "category": {
           "id": 0,
           "name": "string"
@@ -34,6 +34,7 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
         "status": "demomodel"     
       }
     })
+      // same assertions for test cases 1-4
       .then(response => {
         expect(response).to.have.property('status', 200)
         expect(response.body).to.not.be.null
@@ -54,14 +55,17 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
             
             expect(response.body).to.have.property('id', newPetId)
             cy.log('GET id: '+response.body.id, 'POST id: '+newPetId)
+            cy.log('GET newPetId: '+ newPetId)
+            cy.log('GET newPetName: '+ response.body.name)
 
-            // // if needed, write response to file
+            // if needed, write response to file
             // cy.writeFile('cypress/fixtures/outputPet1.json', response.body)
           })
       })
   })
 
   it('2. POST pet + GET pet - body input with some variables', () => {
+    // similar to previous test case, but:
     // instead of fixed input data, get some input data from a variable
     var newPetId    // var needed for assigning and asserting in responses
     var newPet = {  // var containing some properties for the request body
@@ -92,6 +96,7 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
        "status": newPet.status    // from variable   
       }
     })
+      // same assertions for test cases 1-4
       .then(response => {
         expect(response).to.have.property('status', 200)
         expect(response.body).to.not.be.null
@@ -112,18 +117,22 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
             
             expect(response.body).to.have.property('id', newPetId)
             cy.log('GET id: '+response.body.id, 'POST id: '+newPetId)
+            cy.log('GET newPetId: '+ newPetId)
+            cy.log('GET newPetName: '+ response.body.name)
           })
       })
   })
 
   it('3. POST pet + GET pet - body input from file with 1 pet', () => {
+    // similar to previous test case, but:
     // instead of fixed input data or input data from a variable
-    // input data from a file
+    // input data from a file containing 1 pet
     var newPetId
-    var newPet = inputPet1
+    var newPet = inputPet1  // file which is imported at the top of the file; contains 1 pet
 
     cy.log('newPet: '+newPet.id, newPet.name)
     
+    // same request for test cases 3 and 4
     cy.request({
       method: 'POST',
       url:    '/pet',
@@ -134,6 +143,7 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
         expect(response).to.have.property('status', 200)
         expect(response.body).to.not.be.null
 
+        // assert new id
         expect(response.body).to.have.property('id')
         newPetId = response.body.id
         cy.log('POST newPetId: '+ newPetId)
@@ -149,18 +159,25 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
             
             expect(response.body).to.have.property('id', newPetId)
             cy.log('GET id: '+response.body.id, 'POST id: '+newPetId)
+            cy.log('GET newPetId: '+ newPetId)
+            cy.log('GET newPetName: '+ response.body.name)
           })
       })
   })
 
   it('4. POST pets + GET pets - body input from file with 3 pets', () => {
+    // similar to previous test case, but:
     // instead of fixed input data or input data from a variable
-    // input data from a file and loop through the inputs
+    // input data from a file containing 3 pets
+    // and loop through these inputs
     var newPetId
-    var newPets = inputPet3
+    var newPets = inputPet3  // file which is imported at the top of the file; contains 3 pets
 
+    // only difference with previous test case: a loop around the request
     newPets.forEach(newPet => {
       cy.log('newPet: '+ newPet.name) 
+
+      // same request for test cases 3 and 4
       cy.request({
         method: 'POST',
         url:    '/pet',
@@ -170,10 +187,12 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
           expect(response).to.have.property('status', 200)
           expect(response.body).to.not.be.null
           
+          // assert new id
           expect(response.body).to.have.property('id')
           newPetId = response.body.id
           cy.log('POST newPetId: '+ newPetId)
           
+          // assert newly added pet from GET api
           cy.request({
             method: 'GET',
             url:    '/pet/'+newPetId
@@ -183,9 +202,9 @@ describe('Demo Cypress API testing - Petstore - POST', () => {
               expect(response.body).to.not.be.null
 
               expect(response.body).to.have.property('id', newPetId)
+              cy.log('GET id: '+response.body.id, 'POST id: '+newPetId)
               cy.log('GET newPetId: '+ newPetId)
               cy.log('GET newPetName: '+ response.body.name)
-
             })
         })
     })

@@ -1,19 +1,21 @@
 describe('Demo Cypress API testing - Petstore - GET basics', () => {
 
-    // structure of response for api request
-    // https://petstore.swagger.io/v2/store/inventory
-    //
-    // response :
-    // -- body :
-    // ---- sold : <number>
-    // ---- pending: <number>
-    // ---- available : <number>
-    // ---- ... : ...
-    // -- duration : <ms>
-    // -- headers : 
-    // ---- date : <date>
-    // ---- ... : ..
-    // -- status : <statusCode>
+  // simple requests and assertions
+
+  // structure of response for the api request
+  // https://petstore.swagger.io/v2/store/inventory
+  //
+  // response :
+  // -- body :
+  // ---- sold : <number>
+  // ---- pending: <number>
+  // ---- available : <number>
+  // ---- ... : ...
+  // -- duration : <ms>
+  // -- headers : 
+  // ---- date : <date>
+  // ---- ... : ..
+  // -- status : <statusCode>
 
   it('1a. GET - basic assertions - status', () => {
     // 3 calls
@@ -29,7 +31,8 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
       .should('eq', 200)        // first 2 combined
   })
 
-  it('1b. GET - basic assertions - wrong status - FAILS', () => {
+  it.skip('1b. GET - basic assertions - wrong status - FAILS', () => {
+    // remove .skip to run this test case
     // next call is asserting on another status than is returned
     // assertion will fail
     cy.request('https://petstore.swagger.io/v2/store/inventory')
@@ -70,7 +73,8 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
       .should('have.property', 'sold', inventory) // combined: nested property body.sold should equal <inventory>
   })
 
-  it('2b. GET - basic assertions - body 1 PASS + 1 FAIL', () => {
+  it.skip('2b. GET - basic assertions - body 1 PASS + 1 FAIL', () => {
+    // remove .skip to run this test case
     // next 2 calls assert on body.sold matching the <inventory>
     // 1st one passes
     // 2nd one fails
@@ -124,7 +128,7 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
       // .and.should('have.property', 'pending')      
   })
 
-  it.only('5. GET - callback and assertions', () => {
+  it('5. GET - callback and assertions', () => {
     // use callback function to use the response
     // for assertions on multiple properties
     cy.request({                                                  
