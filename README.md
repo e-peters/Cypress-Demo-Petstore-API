@@ -13,4 +13,4 @@ Use them for your own inspiration.
 
 Have fun!
 
-meetup group <i>TA Commun_IT</i>: https://www.meetup.com/nl-NL/TA-Commun_IT/
+NL-meetup group <i>TA Commun_IT</i>: https://www.meetup.com/nl-NL/TA-Commun_IT/
