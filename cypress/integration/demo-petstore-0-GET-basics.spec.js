@@ -40,9 +40,14 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
       .should('eq', 201)        // FAIL!!
   })
 
-  var inventory = 77    // variables can be used to assert
+  // variables can be used to assert
+  var inventory = 262   // adjust to actual current number to pass this test case
   
   it('2a. GET - basic assertions - body', () => {
+  // test case will most likely fail initially because inventory will be different
+  // in requests 5 thru 8
+  // change number of above defined variable to actual inventory to pass this test case
+
     cy.request('https://petstore.swagger.io/v2/store/inventory')
       .should('have.property', 'body')
       .should('not.be.null')
@@ -89,22 +94,25 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
   })
 
   it('3a. GET - basic assertions - duration', () => {
+    // when test case fails (response takes longer than 110 ms) you can retry manually
+    // by clicking the round arrow ('Run All Tests') in the Cypress runner or by clicking R on the keyboard
     cy.request('https://petstore.swagger.io/v2/store/inventory')
       .should('have.property', 'duration')
       .should('lt', 110)   // assert duration <= xxx ms, e.g. for simple performance assertions
   })
 
   it('3b. GET - basic assertions - duration incl retries', {retries: 2}, () => {   // 1 try + max 2 retries
+    // add retries to the specific test case --> in the config of the test itself: {"retries": 2}
+    // or for all tests --> in cypress.json: "retries": 2
+    // when the test fails it will automatically retry until it passes or until the number of retries is reached
     cy.request('https://petstore.swagger.io/v2/store/inventory')
       .should('have.property', 'duration')
       .should('lt', 110)   // assert duration <= xxx ms, e.g. for simple performance assertions
-      // can be combined with retries in cypress.json for all tests
-      // or for one specific test in its config: "retries": 2
   })
       
   it('4. GET - more readable calls', () => {
-    // 4 API calls which end up in the same request url
-    // Request URL: "https://petstore.swagger.io/v2/store/inventory"
+    // 4 API calls which end up in the same request url:
+    // "https://petstore.swagger.io/v2/store/inventory"
     
     // 1) complete url
     cy.request('https://petstore.swagger.io/v2/store/inventory')  
@@ -129,6 +137,8 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
   })
 
   it('5. GET - callback and assertions', () => {
+    // test case will most likely fail initially because inventories will be different
+    // change number of 2 below defined variables to actual inventory numbers to pass this test case
     // use callback function to use the response
     // for assertions on multiple properties
     cy.request({                                                  
@@ -142,8 +152,8 @@ describe('Demo Cypress API testing - Petstore - GET basics', () => {
         expect(response.status).to.eql(200)                   // assert status
         expect(response.body).to.not.be.null                  // assert body
 
-        var inventoryPending  = 64
-        var inventorySold     = 72
+        var inventoryPending  = 281   // adjust to actual current number to pass this test case
+        var inventorySold     = 262   // adjust to actual current number to pass this test case
         // assertion of hardcoded status and inventory
         expect(response.body).to.have.property('pending', inventoryPending) // assert body.pending
         expect(response.body.pending).to.eql(inventoryPending)              // assert body.pending

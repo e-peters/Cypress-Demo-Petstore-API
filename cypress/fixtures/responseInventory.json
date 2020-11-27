@@ -1,8 +1,12 @@
 {
-  " ": 1,
-  "sold": 72,
-  "Sold": 1,
-  "string": 389,
-  "pending": 64,
-  "available": 450
+  "sold": 262,
+  "test": 1,
+  "string": 46,
+  "NotAvailableAtTheMoment": 1,
+  "pending": 281,
+  "available": 356,
+  "Is-available": 1,
+  "invalid": 5,
+  "Pending": 1,
+  "Fido": 2
 }

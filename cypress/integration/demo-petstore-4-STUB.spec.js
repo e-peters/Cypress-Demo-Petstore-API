@@ -27,14 +27,14 @@ describe('Demo Cypress API testing - Petstore - STUB', () => {
     // the response will be the total stub file
     let findStatus = 'demomodel'  // not needed, is ignored because of the fixed response 
 
-    cy.fixture('responseDemomodel.json').as('stubResponse')
+    cy.fixture('responseDemomodel.json').as('stubResponse') // read file from fixtures folder and give it an alias
     cy.server().route({           // cy.route() needs a cy.server() first
       method: 'GET',
       url: '/pet/findByStatus',
       qs: {
         status: findStatus        // not needed; ignored because of the fixed response
       },
-      response: '@stubResponse'   // fixed response from the fixture file
+      response: '@stubResponse'   // fixed response from the fixture file alias
     })
       .its('response')
       .as('stub')
