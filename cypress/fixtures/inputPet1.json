@@ -1,0 +1,18 @@
+{
+  "id": 2,
+  "category": {
+    "id": 0,
+    "name": "cats"
+  },
+  "name": "Pet-Two",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": ""
+    }
+  ],
+  "status": "demomodel"
+}

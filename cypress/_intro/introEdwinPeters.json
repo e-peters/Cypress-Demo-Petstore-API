@@ -1,0 +1,77 @@
+{
+  "Naam": "Edwin Peters",
+
+  "Prive": { 
+    "Leeftijd"        : 50, 
+    "Woonplaats"      : "Huizen", 
+    "BurgerlijkeStaat": "Gehuwd", 
+    "Kinderen"        : [
+      { "Volgnr": 1, "Geslacht": "V", "Leeftijd": 16 },
+      { "Volgnr": 2, "Geslacht": "V", "Leeftijd": 14 }
+    ],
+    "Hobbies"         : [ "Italiaanse taal", "Squash", "Fitness/cardio", "Hardlopen" ]
+  },
+  "Opleidingen": [
+    { "Van": "09-1988", "TotEnMet": "07-1990", "Instituut": "Vrije Universiteit", "Studie": "Informatica" },
+    { "Van": "09-1990", "TotEnMet": "07-1994", "Instituut": "Hogeschool Utrecht", "Studie": "Telematica / Informatica" } 
+  ],
+  "Werkgevers": [
+    { "Van": "09-1994", "TotEnMet": "06-1995", "Naam": "Koninklijke Nederlandse Landmacht (Dienstplicht)" },
+    { "Van": "06-1995", "TotEnMet": "06-2000", "Naam": "Computer 2000 (nu: TechData)" },
+    { "Van": "07-2000", "TotEnMet": "08-2006", "Naam": "Qualityhouse (onderdeel van Centric)" },
+    { "Van": "09-2006", "TotEnMet": "07-2007", "Naam": "Ordina" },
+    { "Van": "08-2007", "TotEnMet": "heden",   "Naam": "Immune-IT" }
+  ],
+  "Certificaten": [
+    { "Jaar": 2002, "Naam": "ISEB (ISTQB) Foundation" },
+    { "Jaar": 2011, "Naam": "ISTQB Certified Tester, Advanced Level - Test Analyst" },
+    { "Jaar": 2012, "Naam": "ISTQB Certified Tester, Advanced Level - Technical Test Analyst" },
+    { "Jaar": 2013, "Naam": "ISTQB Certified Tester, Advanced Level - Test Manager" },
+    { "Jaar": 2018, "Naam": "Professional Scrum Master I / PSM I" }
+  ],
+  "Cursussen": [
+    { "Periode": "TODO", "Naam": "TODO" }
+  ],
+  "Rollen": [
+    "Tester", "Testcoördinator", "Testmanager", "Functioneel Beheerder",
+    "Configurator",
+    "Agile tester", "Scrummaster", "Testautomatiseerder"
+  ],
+  "Opdrachten": [
+    { "Van": "07-2000", "TotEnMet": "11-2000", "Naam": "Nationale-Nederlanden",             "Plaats": "Den Haag" },
+    { "Van": "11-2000", "TotEnMet": "11-2001", "Naam": "Postbank",                          "Plaats": "Amsterdam & Leeuwarden" },
+    { "Van": "12-2001", "TotEnMet": "02-2005", "Naam": "ProRail",                           "Plaats": "Utrecht" },
+    { "Van": "02-2005", "TotEnMet": "08-2005", "Naam": "VvAA",                              "Plaats": "Utrecht" },
+    { "Van": "09-2005", "TotEnMet": "03-2006", "Naam": "GX Software",                       "Plaats": "Nijmegen" },
+    { "Van": "04-2006", "TotEnMet": "06-2006", "Naam": "Schuitema",                         "Plaats": "Amersfoort" },
+    { "Van": "06-2006", "TotEnMet": "08-2006", "Naam": "CAK-BZ",                            "Plaats": "Scheveningen" },
+    { "Van": "09-2006", "TotEnMet": "07-2007", "Naam": "ING",                               "Plaats": "Amsterdam" },
+    { "Van": "08-2007", "TotEnMet": "02-2008", "Naam": "bol.com",                           "Plaats": "Nieuwegein" },
+    { "Van": "02-2008", "TotEnMet": "12-2009", "Naam": "Kamer van Koophandel Nederland",    "Plaats": "Woerden" },
+    { "Van": "01-2010", "TotEnMet": "01-2010", "Naam": "Approachable",                      "Plaats": "Nvt" },
+    { "Van": "02-2010", "TotEnMet": "08-2011", "Naam": "Tele2 Consumer",                    "Plaats": "Diemen" },
+    { "Van": "09-2011", "TotEnMet": "12-2011", "Naam": "Virtual Affairs (nu: We are you)",  "Plaats": "Amsterdam & Arnhem" },
+    { "Van": "01-2012", "TotEnMet": "05-2012", "Naam": "Schretlen & Co. (nu: Rabobank)",    "Plaats": "Amsterdam & Utrecht" },
+    { "Van": "05-2012", "TotEnMet": "12-2015", "Naam": "Tele2 Zakelijk",                    "Plaats": "Diemen" },
+    { "Van": "12-2015", "TotEnMet": "06-2018", "Naam": "OmniHis",                           "Plaats": "Utrecht" },
+    { "Van": "07-2018", "TotEnMet": "01-2020", "Naam": "Waternet",                          "Plaats": "Amsterdam" },
+    { "Van": "01-2020", "TotEnMet": "heden",   "Naam": "De Nederlandsche Bank",             "Plaats": "Amsterdam" }
+  ],
+  "TestAutomatiseringsFrameworks": [
+    { "Naam": "Framework met Java & Sikuli",
+      "Doel": "Desktop applicatie",
+      "Bij" : "OmniHis"
+    },
+    { "Naam": "Robot Framework",
+      "Doel": [ "Web (Selenium library)", "REST API (REST Instance library)", 
+                "Desktop applicatie (White library, Sikuli library)" ],
+      "CICD": [ "MS Azure DevOps Repos", "MS Azure DevOps Pipelines", "Jenkins" ],
+      "Bij" : [ "Waternet", "Cursussen/Workshops" ]
+    },
+    { "Naam": "Cypress",
+      "Doel": [ "Web", "REST API" ],
+      "CICD": [ "MS Azure DevOps Repos", "MS Azure DevOps Pipelines" ],
+      "Bij" : [ "De Nederlandsche Bank", "Cursussen/Workshops" ]
+    }
+  ]
+}

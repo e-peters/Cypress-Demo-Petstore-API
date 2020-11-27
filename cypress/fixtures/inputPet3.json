@@ -1,0 +1,56 @@
+[
+  {
+    "id": 3,
+    "category": {
+      "id": 0,
+      "name": "cats"
+    },
+    "name": "Pet-Three",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "demomodel"
+  },
+  {
+    "id": 4,
+    "category": {
+      "id": 0,
+      "name": "cats"
+    },
+    "name": "Pet-Four",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "demomodel"
+  },
+  {
+    "id": 5,
+    "category": {
+      "id": 0,
+      "name": "cats"
+    },
+    "name": "Pet-Five",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "demomodel"
+  }
+]

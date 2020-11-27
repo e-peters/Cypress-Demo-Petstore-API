@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "Pet-One-Fixed",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "demomodel"
+}

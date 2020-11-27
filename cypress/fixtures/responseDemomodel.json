@@ -1,0 +1,105 @@
+[
+  {
+    "id": 111,
+    "category": {
+      "id": 1,
+      "name": "Herding"
+    },
+    "name": "Marshall",
+    "photoUrls": [
+      "file:/C:/Users/vishalsharma4/eclipse-workspace/cucumberSerenitytest/target/test-classes/Images/Doggie.jpg"
+    ],
+    "tags": [],
+    "status": "pending"
+  },
+  {
+    "id": 222,
+    "category": {
+      "id": 0,
+      "name": "cats"
+    },
+    "name": "Dolly",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": 333,
+    "category": {
+      "id": 0,
+      "name": "dogs"
+    },
+    "name": "Gorilla",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": 1,
+    "category": {
+      "id": 0,
+      "name": "cats"
+    },
+    "name": "Pet-One",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "demomodel"
+  },
+  {
+    "id": 2,
+    "category": {
+      "id": 0,
+      "name": "x"
+    },
+    "name": "Pet-Two",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "demomodel"
+  },
+  {
+    "id": 3,
+    "category": {
+      "id": 0,
+      "name": "z"
+    },
+    "name": "Pet-Three",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "demomodel"
+  }
+]
